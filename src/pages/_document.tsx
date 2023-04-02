@@ -12,17 +12,23 @@ import { AppType } from 'next/app';
 import themes, { roboto } from '@/theme';
 import createEmotionCache from '@/lib/createEmotionCache';
 import { MyAppProps } from './_app';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 interface MyDocumentProps extends DocumentProps {
     emotionStyleTags: JSX.Element[];
 }
 
 export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    const theme = React.useMemo(
+        () => prefersDarkMode ? themes.dark : themes.light,
+        [prefersDarkMode],
+    );
     return (
         <Html lang="en" className={roboto.className}>
             <Head>
                 {/* PWA primary color */}
-                <meta name="theme-color" content={themes.light.palette.primary.main} />
+                <meta name="theme-color" content={theme.palette.primary.main} />
                 <link rel="shortcut icon" href="/favicon.ico" />
                 <meta name="emotion-insertion-point" content="" />
                 {emotionStyleTags}
