@@ -9,7 +9,7 @@ import Document, {
 } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import { AppType } from 'next/app';
-import themes, { roboto } from '@/theme';
+import themes, { roboto } from '@/themes';
 import createEmotionCache from '@/lib/createEmotionCache';
 import { MyAppProps } from './_app';
 import useMediaQuery from '@mui/material/useMediaQuery';

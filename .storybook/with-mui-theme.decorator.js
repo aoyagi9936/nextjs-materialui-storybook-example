@@ -2,7 +2,7 @@ import { ThemeProvider as Emotion10ThemeProvider } from 'emotion-theming';
 import { useMemo } from "react";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 
-import { themes } from '@/theme';
+import { themes } from '@/themes';
 
 export const withMuiTheme = (Story, context) => {
     const { theme: themeKey } = context.globals;

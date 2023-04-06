@@ -1,4 +1,4 @@
-// Button.stories.ts|tsx
+// MyCard.stories.ts|tsx
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -11,6 +11,21 @@ const meta: Meta<typeof MyCard> = {
      */
     title: 'MyCard',
     component: MyCard,
+    argTypes: {
+        minWidth: {
+            control: { type: 'number', min: 275, max: 400, step: 5 }
+        },
+        path: {
+            control: 'text'
+        },
+        title: {
+            control: 'text'
+        },
+        color: {
+            options: ['inherit', 'primary', 'secondary', 'success', 'error', 'info', 'warning'],
+            control: { type: 'select' },
+        }
+    }
 };
 
 export default meta;
@@ -22,5 +37,8 @@ type Story = StoryObj<typeof MyCard>;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-    render: () => <MyCard title="Word of the Day" />,
+    args: {
+        title: "Word of the Day",
+        color: "primary",
+    }
 };

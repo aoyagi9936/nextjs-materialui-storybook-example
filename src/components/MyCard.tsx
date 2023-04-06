@@ -11,18 +11,12 @@ const bull = (
     </Box>
 );
 
-const Props = {
-    minWidth: PropTypes.number,
-    path: PropTypes.string,
-    title: PropTypes.string.isRequired,
-}
-
-const MyCard = (props: InferProps<typeof Props>) => {
+export default function MyCard({ title, minWidth, path, color }: InferProps<typeof MyCard.propTypes>) {
     return (
-        <Card sx={{ minWidth: props.minWidth }}>
+        <Card sx={{ minWidth: minWidth }}>
             <CardContent>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                    {props.title}
+                    {title}
                 </Typography>
                 <Typography variant="h5" component="div">
                     be{bull}nev{bull}o{bull}lent
@@ -38,9 +32,10 @@ const MyCard = (props: InferProps<typeof Props>) => {
             </CardContent>
             <CardActions>
                 <Button size="small"
+                    color={color}
                     component={NextLinkComposed}
                     to={{
-                        pathname: props.path
+                        pathname: path
                     }}
                 >Learn More</Button>
             </CardActions>
@@ -48,11 +43,16 @@ const MyCard = (props: InferProps<typeof Props>) => {
     );
 }
 
-MyCard.propTypes = Props
+MyCard.propTypes = {
+    title: PropTypes.string.isRequired,
+    minWidth: PropTypes.number,
+    path: PropTypes.string,
+    color: PropTypes.oneOf(['inherit', 'primary', 'secondary', 'success', 'error', 'info', 'warning'] as const).isRequired,
+
+}
 
 MyCard.defaultProps = {
     minWidth: 275,
     path: '/',
+    buttonColor: 'primary',
 }
-
-export default MyCard
