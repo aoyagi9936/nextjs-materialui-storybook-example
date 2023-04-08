@@ -1,7 +1,7 @@
 const path = require('path');
 const toPath = (filePath) => path.join(process.cwd(), filePath);
 
-module.exports = {
+const config = {
   webpackFinal: async (config) => {
     return {
       ...config,
@@ -49,3 +49,5 @@ module.exports = {
     },
   },
 };
+
+export default config;
