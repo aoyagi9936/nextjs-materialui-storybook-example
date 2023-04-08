@@ -1,5 +1,4 @@
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
-import PropTypes, { InferProps } from 'prop-types';
 import { NextLinkComposed } from './Link';
 
 const bull = (
@@ -11,7 +10,14 @@ const bull = (
     </Box>
 );
 
-export default function MyCard({ title, minWidth, path, color }: InferProps<typeof MyCard.propTypes>) {
+interface MyCardProps {
+    title: string,
+    minWidth?: number,
+    path?: string,
+    color?: 'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning'
+}
+
+export default function MyCard({ title, minWidth = 275, path = '/', color = 'primary' }: MyCardProps) {
     return (
         <Card sx={{ minWidth: minWidth }}>
             <CardContent>
@@ -41,18 +47,4 @@ export default function MyCard({ title, minWidth, path, color }: InferProps<type
             </CardActions>
         </Card>
     );
-}
-
-MyCard.propTypes = {
-    title: PropTypes.string.isRequired,
-    minWidth: PropTypes.number,
-    path: PropTypes.string,
-    color: PropTypes.oneOf(['inherit', 'primary', 'secondary', 'success', 'error', 'info', 'warning'] as const).isRequired,
-
-}
-
-MyCard.defaultProps = {
-    minWidth: 275,
-    path: '/',
-    buttonColor: 'primary',
 }
