@@ -27,9 +27,6 @@ const config = {
     name: "@storybook/nextjs",
     options: {}
   },
-  docs: {
-    autodocs: true
-  },
   features: {
     emotionAlias: false,
   },
