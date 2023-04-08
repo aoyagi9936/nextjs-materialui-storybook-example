@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project using [Material UI](https://mui.com/) and [Storybook](https://storybook.js.org/)  
+This is a [Next.js](https://nextjs.org/) project using [Material UI](https://mui.com/) and [Storybook](https://storybook.js.org/).  
 This project supports the following framework versions.
 
 - Next.js 13
