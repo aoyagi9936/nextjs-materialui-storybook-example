@@ -9,8 +9,6 @@ const config = {
         ...config.resolve,
         alias: {
           ...config.resolve.alias,
-          '@emotion/core': toPath('node_modules/@emotion/react'),
-          'emotion-theming': toPath('node_modules/@emotion/react'),
           '@': path.resolve(__dirname, '../src'),
         },
       },
@@ -21,7 +19,8 @@ const config = {
       "@storybook/addon-links",
       "@storybook/addon-essentials",
       "@storybook/addon-interactions",
-      "@storybook/addon-mdx-gfm"
+      "@storybook/addon-mdx-gfm",
+      "@storybook/addon-styling"
   ],
   framework: {
     name: "@storybook/nextjs",
