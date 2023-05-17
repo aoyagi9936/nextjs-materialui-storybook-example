@@ -1,5 +1,5 @@
-const path = require('path');
-const toPath = (filePath) => path.join(process.cwd(), filePath);
+const path = require('path')
+const toPath = (filePath) => path.join(process.cwd(), filePath)
 
 const config = {
   webpackFinal: async (config) => {
@@ -14,17 +14,17 @@ const config = {
       },
     }
   },
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
-      "@storybook/addon-links",
-      "@storybook/addon-essentials",
-      "@storybook/addon-interactions",
-      "@storybook/addon-mdx-gfm",
-      "@storybook/addon-styling"
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+    '@storybook/addon-mdx-gfm',
+    '@storybook/addon-styling',
   ],
   framework: {
-    name: "@storybook/nextjs",
-    options: {}
+    name: '@storybook/nextjs',
+    options: {},
   },
   features: {
     emotionAlias: false,
@@ -32,7 +32,7 @@ const config = {
   typescript: {
     check: false,
     checkOptions: {},
-    reactDocgen: "react-docgen-typescript",
+    reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       allowSyntheticDefaultImports: false, // speeds up storybook build time
       esModuleInterop: false, // speeds up storybook build time
@@ -44,6 +44,6 @@ const config = {
           : true,
     },
   },
-};
+}
 
-export default config;
+export default config
