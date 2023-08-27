@@ -1,7 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project using [Material UI](https://mui.com/) and [Storybook](https://storybook.js.org/).  
 This project supports the following framework versions.
 
-- Next.js 13
+- Next.js 13 (Pages Router)
 - Material UI v5
 - Storybook v7
 
