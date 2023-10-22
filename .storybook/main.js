@@ -20,7 +20,7 @@ const config = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-mdx-gfm',
-    '@storybook/addon-styling',
+    '@storybook/addon-themes',
   ],
   framework: {
     name: '@storybook/nextjs',
