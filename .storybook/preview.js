@@ -1,6 +1,6 @@
 // .storybook/preview.js
 import { CssBaseline, ThemeProvider } from '@mui/material'
-import { withThemeFromJSXProvider } from '@storybook/addon-styling'
+import { withThemeFromJSXProvider } from '@storybook/addon-themes'
 
 import { themes } from '@/themes'
 
