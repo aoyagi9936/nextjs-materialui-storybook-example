@@ -1,29 +1,21 @@
 import * as React from 'react'
 import Head from 'next/head'
 import { AppProps } from 'next/app'
+import { AppCacheProvider } from '@mui/material-nextjs/v14-pagesRouter'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
-import { CacheProvider, EmotionCache } from '@emotion/react'
 import themes from '@/themes'
-import createEmotionCache from '@/lib/createEmotionCache'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
-// Client-side cache, shared for the whole session of the user in the browser.
-const clientSideEmotionCache = createEmotionCache()
-
-export interface MyAppProps extends AppProps {
-  emotionCache?: EmotionCache
-}
-
-export default function MyApp(props: MyAppProps) {
-  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
+export default function MyApp(props: AppProps) {
+  const { Component, pageProps } = props
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
   const theme = React.useMemo(
     () => (prefersDarkMode ? themes.dark : themes.light),
     [prefersDarkMode]
   )
   return (
-    <CacheProvider value={emotionCache}>
+    <AppCacheProvider {...props}>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
@@ -32,6 +24,6 @@ export default function MyApp(props: MyAppProps) {
         <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>
-    </CacheProvider>
+    </AppCacheProvider>
   )
 }
