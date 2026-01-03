@@ -47,7 +47,6 @@
     "storybook": "8.6.15",
     "style-loader": "^4.0.0",
     "typescript": "^5.9.3",
-    "util": "^0.12.5",
-    "webpack": "5.92.1"
+    "util": "^0.12.5"
   }
 }
